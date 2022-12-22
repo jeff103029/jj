@@ -27,6 +27,6 @@ def webhook3():
                 dict=doc.to_dict()
           
                 if keyword in dict["sort"]:
-                result += "題目：" + dict["Question"] + "\n"
-        info += result
+                    result += "題目：" + dict["Question"] + "\n"
+            info += result
     return make_response(jsonify({"fulfillmentText": info}))
