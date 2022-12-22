@@ -13,7 +13,7 @@ def webhook3():
     
     action =  req.get("queryResult").get("action")
     #msg =  req.get("queryResult").get("queryText")
-                                                       
+    info = ""                                                   
     if (action == "keywordchoice"):
         keyword =  req.get("queryResult").get("parameters").get("keyword")
         
@@ -28,5 +28,6 @@ def webhook3():
           
                 if keyword in dict["sort"]:
                     result += "題目：" + dict["Question"] + "\n"
-            info += result
+                info += result
+
     return make_response(jsonify({"fulfillmentText": info}))
