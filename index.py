@@ -28,6 +28,6 @@ def webhook3():
           
                 if keyword in dict["sort"]:
                     result += "題目：" + dict["Question"] + "\n"
-                info += result
+            info += result
 
     return make_response(jsonify({"fulfillmentText": info}))
